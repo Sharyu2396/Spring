@@ -1,0 +1,20 @@
+package com.met.spring.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.met.spring.Employee;
+
+public class SpringTest {
+
+	public static void main(String[] args) {
+		
+		ApplicationContext context=new ClassPathXmlApplicationContext("test.xml");
+		Object beanold=context.getBean("employee1");//1st way of get bean no need to type cast here
+		System.out.println(beanold);
+		
+		Employee bean=(Employee)context.getBean("employee1");//2nd way for get bean
+		System.out.println(bean);
+		
+	}
+}
